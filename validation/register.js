@@ -1,5 +1,5 @@
-const Validator = require('validator');
-const validText = require('./valid-text');
+const Validator = require("validator");
+const validText = require("./valid-text");
 
 module.exports = function validateRegisterInput(data) {
     let errors = {};
@@ -17,11 +17,11 @@ module.exports = function validateRegisterInput(data) {
         errors.handle = 'Handle field is required';
     }
 
-    if (Validator.isEmpty(data.eamil)) {
+    if (Validator.isEmpty(data.email)) {
         errors.email = 'Email field is required';
     }
 
-    if (!Validator.isEamil(data.email)) {
+    if (!Validator.isEmail(data.email)) {
         errors.email = 'Email is invalid';
     }
 
@@ -37,7 +37,7 @@ module.exports = function validateRegisterInput(data) {
         errors.password2 = 'Confirm Password field is required';
     }
 
-    if (!Validator.equals(data.passowrd, data.password2)) {
+    if (!Validator.equals(data.password, data.password2)) {
         errors.password2 = 'Passwords must match';
     }
 
