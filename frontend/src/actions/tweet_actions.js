@@ -28,10 +28,12 @@ export const fetchTweets = ()  => dispatch => (
 export const fetchUserTweets = id => dispatch => (
     getUserTweets(id)
         .then(tweets => dispatch(receiveUserTweets(tweets)))
+        .catch(err => console.log(err))
 );
 
 export const composeTweet = data => dispatch => (
     writeTweet(data)
         .then(tweet => dispatch(receiveNewTweet(tweet)))
+        .catch(err => console.log(err))
 );
 
