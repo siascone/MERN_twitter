@@ -5,7 +5,7 @@ import './navbar.css';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
 
@@ -19,12 +19,15 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div>
-                    <Link to={'/tweets'}>All Tweets</Link>
-                    <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/new_tweet'}>Write a Tweet</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
-                </div>
+              <div>
+                <Link to={"/tweets"}>All Tweets</Link>
+                <br />
+                <Link to={"/profile"}>Profile</Link>
+                <br />
+                <Link to={"/new_tweet"}>Write a Tweet</Link>
+                <br />
+                <button onClick={this.logoutUser}>Logout</button>
+              </div>
             );
         } else {
             return (
